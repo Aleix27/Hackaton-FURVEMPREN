@@ -60,29 +60,6 @@
             position: relative;
             height: 100vh;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .project-hero video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 0;
-            transform: translateX(-50%) translateY(-50%);
-            object-fit: cover;
-            opacity: 0.4;
-        }
-
-        .project-hero-content {
-            position: relative;
-            z-index: 1;
         }
 
         .project-hero h1 {
@@ -245,115 +222,77 @@
             <a href="business-canvas.html">Business Canvas</a>
             <a href="index.html#equip">Equip</a>
             <a href="index.html#contacto">Contacte</a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="project-hero">
-            <video autoplay muted loop>
-                <source src="assets/videos/video plantes hotel decoracio.mp4" type="video/mp4">
-            </video>
-            <div class="project-hero-content">
-                <h1>Kriskadecor Green Rebirth</h1>
-            </div>
-        </section>
-
-        <section class="intro-section">
-            <h2>Natura que Penja del Disseny</h2>
-            <p>Al cor de Green Rebirth hi ha una idea simple però poderosa: fusionar la bellesa industrial de les
-                nostres cadenes d'alumini amb la vitalitat orgànica de la natura. Utilitzem cadenes reciclades com a
-                estructura per crear espectaculars jardins verticals i solucions d'interiorisme que respiren vida.</p>
-        </section>
-
-        <section class="feature-section">
-            <div class="feature-media">
-                <img src="assets/images/paret cadenes i plantes.png" alt="Paret de cadenes amb plantes"
-                    class="lightbox-trigger">
-            </div>
-            <div class="feature-text">
-                <h3>Estructures Vives</h3>
-                <p>Les nostres cadenes es converteixen en l'esquelet de jardins verticals modulars. La lleugeresa de
-                    l'alumini permet crear estructures de gran format que es poden instal·lar en una gran varietat
-                    d'espais, des d'oficines fins a hotels, aportant un toc de natura inesperat i sofisticat.</p>
-            </div>
-        </section>
-
-        <section class="full-screen-video-container">
-            <video src="assets/videos/video prototip plantes.mp4" autoplay loop muted></video>
-        </section>
-
-        <section class="feature-section reverse">
-            <div class="feature-text">
-                <h3>Disseny Biofílic</h3>
-                <p>Aquests dissenys no només són estèticament impactants, sinó que també milloren la qualitat de l'aire
-                    i el benestar als espais que habiten. La biofília, la nostra connexió innata amb la natura, és el
-                    pilar d'aquest projecte, buscant crear ambients més saludables i productius.</p>
+            i el benestar als espais que habiten. La biofília, la nostra connexió innata amb la natura, és el
+            pilar d'aquest projecte, buscant crear ambients més saludables i productius.</p>
             </div>
             <div class="feature-media">
                 <img src="assets/images/imatge plantes kirska .png" alt="Plantes en cadenes Kriskadecor"
                     class="lightbox-trigger">
             </div>
-        </section>
+            </section>
 
-        <section class="feature-section">
-            <div class="feature-media">
-                <img src="assets/images/WhatsApp Image 2025-10-18 at 11.11.08.jpeg" alt="Detall de plantes en cadenes"
-                    class="lightbox-trigger">
+            <section class="feature-section">
+                <div class="feature-media">
+                    <img src="assets/images/WhatsApp Image 2025-10-18 at 11.11.08.jpeg"
+                        alt="Detall de plantes en cadenes" class="lightbox-trigger">
+                </div>
+                <div class="feature-text">
+                    <h3>Versatilitat i Adaptabilitat</h3>
+                    <p>La versatilitat de les cadenes de Kriskadecor permet una personalització sense límits. Es poden
+                        crear
+                        des de subtils vels vegetals fins a denses parets de vegetació, adaptant-se a qualsevol concepte
+                        de
+                        disseny i necessitat del client.</p>
+                </div>
+            </section>
+
+            <section class="feature-section reverse">
+                <div class="feature-text">
+                    <h3>Un Toc de Color i Vida</h3>
+                    <p>La combinació de la paleta de colors de Kriskadecor amb la varietat de plantes disponibles permet
+                        crear composicions úniques i vibrants. Cada projecte és una obra d'art viva que evoluciona amb
+                        el
+                        temps.</p>
+                </div>
+                <div class="feature-media">
+                    <img src="assets/images/deco paret ccad.png" alt="Decoració de paret amb cadenes"
+                        class="lightbox-trigger">
+                </div>
+            </section>
+
+            </main>
+
+            <div id="myLightbox" class="lightbox">
+                <span class="lightbox-close">&times;</span>
+                <img class="lightbox-content" id="lightboxImg">
             </div>
-            <div class="feature-text">
-                <h3>Versatilitat i Adaptabilitat</h3>
-                <p>La versatilitat de les cadenes de Kriskadecor permet una personalització sense límits. Es poden crear
-                    des de subtils vels vegetals fins a denses parets de vegetació, adaptant-se a qualsevol concepte de
-                    disseny i necessitat del client.</p>
-            </div>
-        </section>
 
-        <section class="feature-section reverse">
-            <div class="feature-text">
-                <h3>Un Toc de Color i Vida</h3>
-                <p>La combinació de la paleta de colors de Kriskadecor amb la varietat de plantes disponibles permet
-                    crear composicions úniques i vibrants. Cada projecte és una obra d'art viva que evoluciona amb el
-                    temps.</p>
-            </div>
-            <div class="feature-media">
-                <img src="assets/images/deco paret ccad.png" alt="Decoració de paret amb cadenes"
-                    class="lightbox-trigger">
-            </div>
-        </section>
+            <footer class="footer">
+                <p>&copy; 2025 Kriskadecor Atelier.</p>
+            </footer>
 
-    </main>
+            <script>
+                const lightbox = document.getElementById('myLightbox');
+                const lightboxImg = document.getElementById('lightboxImg');
+                const closeBtn = document.querySelector('.lightbox-close');
 
-    <div id="myLightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightboxImg">
-    </div>
+                document.querySelectorAll('.lightbox-trigger').forEach(item => {
+                    item.addEventListener('click', event => {
+                        lightbox.style.display = 'flex';
+                        lightboxImg.src = event.target.src;
+                    });
+                });
 
-    <footer class="footer">
-        <p>&copy; 2025 Kriskadecor Atelier.</p>
-    </footer>
+                closeBtn.addEventListener('click', () => {
+                    lightbox.style.display = 'none';
+                });
 
-    <script>
-        const lightbox = document.getElementById('myLightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const closeBtn = document.querySelector('.lightbox-close');
-
-        document.querySelectorAll('.lightbox-trigger').forEach(item => {
-            item.addEventListener('click', event => {
-                lightbox.style.display = 'flex';
-                lightboxImg.src = event.target.src;
-            });
-        });
-
-        closeBtn.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
-
-        lightbox.addEventListener('click', (e) => {
-            if (e.target !== lightboxImg) {
-                lightbox.style.display = 'none';
-            }
-        });
-    </script>
+                lightbox.addEventListener('click', (e) => {
+                    if (e.target !== lightboxImg) {
+                        lightbox.style.display = 'none';
+                    }
+                });
+            </script>
 </body>
 
 </html>
