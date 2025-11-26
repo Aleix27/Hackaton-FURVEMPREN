@@ -50,58 +50,7 @@
             width: auto;
         }
 
-        .nav a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
-            font-size: 1em;
-            transition: color 0.3s, text-shadow 0.3s;
-        }
-
-        .nav a:hover {
-            color: var(--color-primary);
-            text-shadow: 0 0 5px var(--color-primary);
-        }
-
-        /* --- Hero Section --- */
-        .hero {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background-color: #000000;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 101%;
-            background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4));
-            z-index: 1;
-        }
-
-        .hero-background-video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: translate(-50%, -50%);
-            z-index: -1;
-        }
-
-        .hero-content {
-            z-index: 2;
-            position: relative;
-        }
+        .nav a {}
 
         .hero h1 {
             font-size: 4.5em;
@@ -514,7 +463,8 @@
             <div class="text-content">
                 <p>Sabies que cada any KriskaDecor acumula metres i metres de cadenes d’alumini que no poden
                     reutilitzar? Llençar-les significa perdre material d’alta qualitat i generar residus.
-                    <strong>Nosaltres hi vam veure una oportunitat.</strong></p>
+                    <strong>Nosaltres hi vam veure una oportunitat.</strong>
+                </p>
             </div>
         </section>
 
@@ -534,7 +484,7 @@
         <section class="section animated-section" id="projectes">
             <h2 class="section-title">Dues Vides, <span>Un Origen</span></h2>
             <div class="projects-grid">
-                <a href="kriska-green-rebirth.html" class="project-card"
+                <a href="projects.html" class="project-card"
                     style="background-image: url('assets/images/imatge plantes kirska .png');">
                     <div class="project-content">
                         <h3>Kriska Green Rebirth</h3>
@@ -542,7 +492,7 @@
                             disseny industrial es fusiona amb la natura.</p>
                     </div>
                 </a>
-                <a href="kriska-art-rebirth.html" class="project-card"
+                <a href="projects.html" class="project-card"
                     style="background-image: url('assets/images/art kriska .png');">
                     <div class="project-content">
                         <h3>Kriska Art Rebirth</h3>
