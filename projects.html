@@ -25,21 +25,6 @@
             overflow-x: hidden;
         }
 
-        #bg-video {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: 0;
-            transform: translateX(-50%) translateY(-50%);
-            object-fit: cover;
-            opacity: 0.2;
-            filter: blur(5px);
-        }
-
         .page-wrapper {
             position: relative;
             z-index: 1;
@@ -85,6 +70,7 @@
             object-fit: cover;
             margin-top: 70px;
             /* Header height */
+            pointer-events: none;
         }
 
         .projects-header {
@@ -188,11 +174,109 @@
         }
 
         .footer {
-            </video><div class="page-wrapper"><header class="header"><a href="index.html"><img src="assets/images/LOGO.png" alt="Kriskadecor Atelier Logo" class="logo"></a><nav class="nav"><a href="index.html#problema">El Repte</a><a href="index.html#projectes">Projectes</a><a href="index.html#validacio">Validació</a><a href="business-canvas.html">Business Canvas</a><a href="index.html#equip">Equip</a><a href="index.html#contacto">Contacte</a></nav></header><main><video autoplay muted loop class="banner-video"><source src="assets/videos/baner projects .mp4" type="video/mp4"></video><section class="projects-header"><h1>Kriskadecor Nova Vida</h1><p>A Kriskadecor Atelier,
-            creiem en el poder de la transformació. Els nostres projectes de renaixement se centren a donar una nova vida a les cadenes d'alumini que han estat descartades, ja sigui per
- petits errors de producció o perquè han estat retornades. Adoptem un model d'economia circular per
- convertir aquests materials en quelcom nou i valuós,
-            tancant el cicle i reduint el nostre impacte ambiental.</p></section><section class="projects-container"><div class="project-card" style="background-image: url('assets/images/imatge plantes kirska .png');"><div class="project-card-content"><h2>Kriskadecor Green Rebirth</h2><p>Transformem les cadenes reciclades en exuberants jardins verticals i solucions de disseny interior que integren la natura en l'arquitectura.</p>
- <a href="kriska-green-rebirth.html">Descobrir</a></div></div><div class="project-card" style="background-image: url('assets/images/art kriska .png');"><div class="project-card-content"><h2>Kriskadecor Art Rebirth</h2><p>Oferim les nostres cadenes a joves artistes i talents emergents com un llenç perquè puguin crear obres d'art úniques i expressives.</p>
- <a href="kriska-art-rebirth.html">Explorar</a></div></div></section></main><footer class="footer"><p>&copy;
-            2025 Kriskadecor Atelier. Transformant el disseny amb propòsit.</p></footer></div></body></html>
+            text-align: center;
+            padding: 60px 20px;
+            background: #080808;
+            border-top: 1px solid var(--color-border);
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 5%;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.95);
+            }
+
+            .nav {
+                margin-top: 15px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .nav a {
+                margin: 0;
+                font-size: 0.9em;
+            }
+
+            .projects-header h1 {
+                font-size: 2.5em;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .project-card {
+                height: auto;
+                aspect-ratio: 4/3;
+                padding: 30px;
+            }
+
+            .project-card h2 {
+                font-size: 1.8em;
+            }
+
+            .project-card p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <a href="index.html"><img src="assets/images/LOGO.png" alt="Kriskadecor Atelier Logo" class="logo"></a>
+            <nav class="nav">
+                <a href="index.html#problema">El Repte</a>
+                <a href="projects.html" class="active">Projectes</a>
+                <a href="business-canvas.html">Business Canvas</a>
+                <a href="index.html#equip">Equip</a>
+                <a href="index.html#contacto">Contacte</a>
+            </nav>
+        </header>
+
+        <main>
+            <video autoplay muted loop playsinline class="banner-video">
+                <source src="assets/videos/baner projects .mp4" type="video/mp4">
+            </video>
+
+            <section class="projects-header">
+                <h1>Kriskadecor Nova Vida</h1>
+                <p>A Kriskadecor Atelier, creiem en el poder de la transformació. Els nostres projectes de renaixement
+                    se centren a donar una nova vida a les cadenes d'alumini que han estat descartades, ja sigui per
+                    petits errors de producció o perquè han estat retornades. Adoptem un model d'economia circular per
+                    convertir aquests materials en quelcom nou i valuós, tancant el cicle i reduint el nostre impacte
+                    ambiental.</p>
+            </section>
+
+            <section class="projects-container">
+                <div class="project-card" style="background-image: url('assets/images/imatge plantes kirska .png');">
+                    <div class="project-card-content">
+                        <h2>Kriskadecor Green Rebirth</h2>
+                        <p>Transformem les cadenes reciclades en exuberants jardins verticals i solucions de disseny
+                            interior que integren la natura en l'arquitectura.</p>
+                        <a href="kriska-green-rebirth.html">Descobrir</a>
+                    </div>
+                </div>
+                <div class="project-card" style="background-image: url('assets/images/art kriska .png');">
+                    <div class="project-card-content">
+                        <h2>Kriskadecor Art Rebirth</h2>
+                        <p>Oferim les nostres cadenes a joves artistes i talents emergents com un llenç perquè puguin
+                            crear obres d'art úniques i expressives.</p>
+                        <a href="kriska-art-rebirth.html">Explorar</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 Kriskadecor Atelier. Transformant el disseny amb propòsit.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
