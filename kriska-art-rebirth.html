@@ -178,167 +178,36 @@
             position: absolute;
             top: 20px;
             right: 35px;
-            color: #fff;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+            <a href="index.html"><img src="assets/images/LOGO.png" alt="Kriskadecor Atelier Logo" class="logo"></a><nav class="nav"><a href="index.html#problema">El Repte</a><a href="projects.html" class="active">Projectes</a><a href="business-canvas.html">Business Canvas</a><a href="index.html#equip">Equip</a><a href="index.html#contacto">Contacte</a></nav></header><main><section class="project-hero"><video autoplay muted loop playsinline><source src="assets/videos/video artistes .mp4" type="video/mp4"></video><div class="project-hero-content"><h1>Kriskadecor Art Rebirth</h1></div></section><section class="intro-section"><h2>El Metall Com a Llenç: Donant Suport al Talent Emergent</h2> <p>Art Rebirth és la nostra iniciativa per nodrir la creativitat i l'art. Creiem que les nostres cadenes
+ d'alumini, fins i tot aquelles que no compleixen els nostres estrictes controls de qualitat per a
+ projectes arquitectònics, poden ser el punt de partida per a quelcom extraordinari.</p> </section> <section class="feature-section" > <div class="feature-media" > <img src="assets/images/art cad.png" alt="Obra d'art amb cadenes de Kriskadecor"
+                class="lightbox-trigger" > </div> <div class="feature-text" > <h3>Un Material, Infinites Possibilitats</h3> <p>Donem aquest material a joves artistes, dissenyadors i estudiants, oferint-los un llenç metàl·lic i texturitzat perquè explorin noves formes d'expressió. La mal·leabilitat i la lleugeresa de les
+ cadenes d'alumini permeten crear escultures, instal·lacions, joieria i tota mena d' obres d'art.</p>
+ </div> </section> <section class="feature-section reverse" > <div class="feature-text" > <h3>Fomentant la Comunitat Artística</h3> <p>Aquest projecte no només redueix els residus, sinó que també fomenta una comunitat artística vibrant i dóna suport a la pròxima generació de creadors. Organitzem tallers, exposicions i col·laboracions per donar visibilitat al treball dels artistes que participen en el programa.</p> </div> <div class="feature-media" > <img src="assets/images/treballan estu cad.png" alt="Estudiants treballant amb cadenes"
+                class="lightbox-trigger" > </div> </section> <section class="feature-section" > <div class="feature-media" > <img src="assets/images/Image_10.png" alt="Detall d'una obra d'art amb cadenes"
+                class="lightbox-trigger" > </div> <div class="feature-text" > <h3>Del Disseny a l'Art</h3>
+ <p>Les cadenes que una vegada van formar part d'un projecte d' interiorisme de luxe, ara es converteixen en peces d'art amb una nova història per explicar. Cada obra és un testimoni de la transformació i
+ la creativitat, un pont entre el disseny industrial i l'expressió artística.</p>
+ </div> </section> </main> <div id="myLightbox" class="lightbox" > <span class="lightbox-close" >&times;
+            </span><img class="lightbox-content" id="lightboxImg"></div><footer class="footer"><p>&copy;
+            2025 Kriskadecor Atelier.</p></footer><script>const lightbox=document.getElementById('myLightbox');
+            const lightboxImg=document.getElementById('lightboxImg');
+            const closeBtn=document.querySelector('.lightbox-close');
 
-        @media (max-width: 768px) {
-            .header {
-                padding: 15px 5%;
-                flex-direction: column;
-                background-color: rgba(0, 0, 0, 0.95);
-            }
+            document.querySelectorAll('.lightbox-trigger').forEach(item=> {
+                    item.addEventListener('click', event=> {
+                            lightbox.style.display='flex';
+                            lightboxImg.src=event.target.src;
+                        });
+                });
 
-            .nav {
-                margin-top: 15px;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-            }
+            closeBtn.addEventListener('click', ()=> {
+                    lightbox.style.display='none';
+                });
 
-            .nav a {
-                margin: 0;
-                font-size: 0.85em;
-            }
-
-            .project-hero h1 {
-                font-size: 2em;
-            }
-
-            .intro-section {
-                padding: 40px 5%;
-            }
-
-            .intro-section h2 {
-                font-size: 1.8em;
-            }
-
-            .intro-section p {
-                font-size: 1em;
-            }
-
-            .feature-section {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 40px 5%;
-                text-align: center;
-            }
-
-            .feature-text h3 {
-                font-size: 1.5em;
-            }
-
-            .feature-text p {
-                font-size: 1em;
-            }
-        }
-    </style>
-</head>
-
-<body>
-    <header class="header">
-        <a href="index.html"><img src="assets/images/LOGO.png" alt="Kriskadecor Atelier Logo" class="logo"></a>
-        <nav class="nav">
-            <a href="index.html#problema">El Repte</a>
-            <a href="projects.html" class="active">Projectes</a>
-            <a href="business-canvas.html">Business Canvas</a>
-            <a href="index.html#equip">Equip</a>
-            <a href="index.html#contacto">Contacte</a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="project-hero">
-            <video autoplay muted loop playsinline>
-                <source src="assets/videos/video artistes .mp4" type="video/mp4">
-            </video>
-            <div class="project-hero-content">
-                <h1>Kriskadecor Art Rebirth</h1>
-            </div>
-        </section>
-
-        <section class="intro-section">
-            <h2>El Metall Com a Llenç: Donant Suport al Talent Emergent</h2>
-            <p>Art Rebirth és la nostra iniciativa per nodrir la creativitat i l'art. Creiem que les nostres cadenes
-                d'alumini, fins i tot aquelles que no compleixen els nostres estrictes controls de qualitat per a
-                projectes arquitectònics, poden ser el punt de partida per a quelcom extraordinari.</p>
-        </section>
-
-        <section class="feature-section">
-            <div class="feature-media">
-                <img src="assets/images/art cad.png" alt="Obra d'art amb cadenes de Kriskadecor"
-                    class="lightbox-trigger">
-            </div>
-            <div class="feature-text">
-                <h3>Un Material, Infinites Possibilitats</h3>
-                <p>Donem aquest material a joves artistes, dissenyadors i estudiants, oferint-los un llenç metàl·lic i
-                    texturitzat perquè explorin noves formes d'expressió. La mal·leabilitat i la lleugeresa de les
-                    cadenes d'alumini permeten crear escultures, instal·lacions, joieria i tota mena d'obres d'art.</p>
-            </div>
-        </section>
-
-        <section class="feature-section reverse">
-            <div class="feature-text">
-                <h3>Fomentant la Comunitat Artística</h3>
-                <p>Aquest projecte no només redueix els residus, sinó que també fomenta una comunitat artística vibrant
-                    i dóna suport a la pròxima generació de creadors. Organitzem tallers, exposicions i col·laboracions
-                    per donar visibilitat al treball dels artistes que participen en el programa.</p>
-            </div>
-            <div class="feature-media">
-                <img src="assets/images/treballan estu cad.png" alt="Estudiants treballant amb cadenes"
-                    class="lightbox-trigger">
-            </div>
-        </section>
-
-        <section class="feature-section">
-            <div class="feature-media">
-                <img src="assets/images/Image_10.png" alt="Detall d'una obra d'art amb cadenes"
-                    class="lightbox-trigger">
-            </div>
-            <div class="feature-text">
-                <h3>Del Disseny a l'Art</h3>
-                <p>Les cadenes que una vegada van formar part d'un projecte d'interiorisme de luxe, ara es converteixen
-                    en peces d'art amb una nova història per explicar. Cada obra és un testimoni de la transformació i
-                    la creativitat, un pont entre el disseny industrial i l'expressió artística.</p>
-            </div>
-        </section>
-
-    </main>
-
-    <div id="myLightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightboxImg">
-    </div>
-
-    <footer class="footer">
-        <p>&copy; 2025 Kriskadecor Atelier.</p>
-    </footer>
-
-    <script>
-        const lightbox = document.getElementById('myLightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        const closeBtn = document.querySelector('.lightbox-close');
-
-        document.querySelectorAll('.lightbox-trigger').forEach(item => {
-            item.addEventListener('click', event => {
-                lightbox.style.display = 'flex';
-                lightboxImg.src = event.target.src;
-            });
-        });
-
-        closeBtn.addEventListener('click', () => {
-            lightbox.style.display = 'none';
-        });
-
-        lightbox.addEventListener('click', (e) => {
-            if (e.target !== lightboxImg) {
-                lightbox.style.display = 'none';
-            }
-        });
-    </script>
-</body>
-
-</html>
+            lightbox.addEventListener('click', (e)=> {
+                    if (e.target !==lightboxImg) {
+                        lightbox.style.display='none';
+                    }
+                });
+            </script></body></html>
