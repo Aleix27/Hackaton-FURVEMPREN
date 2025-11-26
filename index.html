@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,15 +39,17 @@
             position: fixed;
             width: 92%;
             top: 0;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0, 0, 0, 0.5);
             z-index: 1000;
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--color-border);
         }
+
         .header .logo {
             height: 35px;
             width: auto;
         }
+
         .nav a {
             color: #ffffff;
             text-decoration: none;
@@ -55,6 +58,7 @@
             font-size: 1em;
             transition: color 0.3s, text-shadow 0.3s;
         }
+
         .nav a:hover {
             color: var(--color-primary);
             text-shadow: 0 0 5px var(--color-primary);
@@ -69,26 +73,36 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            background-color: #000000;
         }
+
         .hero::after {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.4));
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 101%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4));
             z-index: 1;
         }
+
         .hero-background-video {
             position: absolute;
-            top: 50%; left: 50%;
-            width: 100%; height: 100%;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             transform: translate(-50%, -50%);
             z-index: -1;
         }
+
         .hero-content {
             z-index: 2;
             position: relative;
         }
+
         .hero h1 {
             font-size: 4.5em;
             margin: 0;
@@ -96,6 +110,7 @@
             letter-spacing: 4px;
             color: #fff;
         }
+
         .hero .slogan {
             font-size: 1.4em;
             margin-top: 15px;
@@ -111,20 +126,29 @@
             position: relative;
             overflow: hidden;
         }
+
         .section-bg {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-position: center;
             z-index: -2;
         }
+
         .section-bg.parallax {
-             background-attachment: fixed;
+            background-attachment: fixed;
         }
+
         .section-overlay {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.8);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
             z-index: -1;
         }
 
@@ -133,10 +157,12 @@
             transform: translateY(60px);
             transition: opacity 1s ease-out, transform 1s ease-out;
         }
+
         .animated-section.visible {
             opacity: 1;
             transform: translateY(0);
         }
+
         .section-title {
             font-size: 3em;
             margin-bottom: 80px;
@@ -144,9 +170,11 @@
             letter-spacing: 5px;
             text-align: center;
         }
+
         .section-title span {
             color: var(--color-primary);
         }
+
         .text-content {
             max-width: 900px;
             margin: 0 auto;
@@ -154,6 +182,7 @@
             line-height: 1.9;
             text-align: center;
         }
+
         .text-content strong {
             color: var(--color-primary);
             font-weight: 600;
@@ -166,6 +195,7 @@
             gap: 30px;
             margin-top: 80px;
         }
+
         #repte .challenge-image {
             height: 450px;
             background-size: cover;
@@ -173,9 +203,10 @@
             border-radius: 15px;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
+
         #repte .challenge-image:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
         #projectes .projects-grid {
@@ -198,30 +229,39 @@
             overflow: hidden;
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
+
         #projectes .project-card:hover {
             transform: scale(1.03);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
         }
+
         #projectes .project-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
             transition: background 0.4s ease;
         }
+
         #projectes .project-card:hover::before {
-            background: rgba(0,0,0,0.2);
+            background: rgba(0, 0, 0, 0.2);
         }
+
         #projectes .project-content {
             position: relative;
             z-index: 1;
             text-align: center;
             padding: 20px;
         }
+
         #projectes .project-content h3 {
             font-size: 2.5em;
             margin-bottom: 15px;
         }
+
         #projectes .project-content p {
             font-size: 1.1em;
             max-width: 400px;
@@ -235,6 +275,7 @@
             position: relative;
             z-index: 2;
         }
+
         #validacio .validation-card {
             background-color: rgba(17, 17, 17, 0.8);
             backdrop-filter: blur(10px);
@@ -246,10 +287,12 @@
             justify-content: center;
             align-items: center;
         }
+
         #validacio .citysens-logo {
             width: 150px;
             margin-bottom: 30px;
         }
+
         #validacio .validation-quote {
             font-size: 1.3em;
             font-style: italic;
@@ -257,10 +300,12 @@
             color: #ccc;
             margin: 0 0 20px 0;
         }
+
         #validacio .validation-source {
             font-weight: 700;
             color: var(--color-primary);
         }
+
         #validacio .validation-stat {
             font-size: 8em;
             font-weight: 700;
@@ -272,17 +317,20 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
         }
+
         #equip .strategy-card {
             background-color: var(--color-dark-card);
             padding: 40px;
             border-radius: 15px;
             border: 1px solid var(--color-border);
         }
+
         #equip .icon {
             font-size: 3.5em;
             color: var(--color-primary);
             margin-bottom: 25px;
         }
+
         #equip h3 {
             font-size: 1.5em;
             margin-bottom: 15px;
@@ -296,23 +344,32 @@
             align-items: center;
             padding: 0 5%;
         }
+
         #transformem .video-overlay {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); z-index: 2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2;
         }
+
         #transformem .main-cta-content {
             position: relative;
             z-index: 2;
             max-width: 1000px;
             text-align: center;
         }
+
         #transformem h2 {
             font-size: 3.5em;
             color: #fff;
             font-weight: 700;
-            text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
+            text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
             margin: 0 0 20px 0;
         }
+
         #transformem p {
             font-size: 1.8em;
             color: var(--color-primary);
@@ -325,6 +382,7 @@
             border-bottom: 1px solid var(--color-border);
             text-align: center;
         }
+
         #contacto .cta-button {
             display: inline-block;
             margin-top: 40px;
@@ -336,6 +394,7 @@
             font-size: 1.2em;
             transition: background-color 0.3s, color 0.3s, transform 0.3s;
         }
+
         #contacto .cta-button:hover {
             background-color: var(--color-primary);
             color: #000;
@@ -346,8 +405,85 @@
             text-align: center;
             padding: 60px 10%;
         }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 5%;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.95);
+            }
+
+            .nav {
+                margin-top: 15px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .nav a {
+                margin: 0;
+                font-size: 0.9em;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+                letter-spacing: 2px;
+            }
+
+            .hero .slogan {
+                font-size: 1em;
+                letter-spacing: 5px;
+            }
+
+            .section {
+                padding: 80px 5%;
+            }
+
+            .section-title {
+                font-size: 2em;
+                margin-bottom: 40px;
+            }
+
+            #repte .challenge-gallery {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            #projectes .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            #projectes .project-card {
+                height: 50vh;
+            }
+
+            #validacio .validation-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            #equip .strategy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #transformem h2 {
+                font-size: 2em;
+            }
+
+            #transformem p {
+                font-size: 1.2em;
+            }
+
+            .footer {
+                padding: 40px 5%;
+            }
+        }
     </style>
 </head>
+
 <body>
 
     <header class="header">
@@ -376,7 +512,9 @@
         <section class="section animated-section" id="problema">
             <h2 class="section-title">De Residu a <span>Recurs</span></h2>
             <div class="text-content">
-                <p>Sabies que cada any KriskaDecor acumula metres i metres de cadenes d’alumini que no poden reutilitzar? Llençar-les significa perdre material d’alta qualitat i generar residus. <strong>Nosaltres hi vam veure una oportunitat.</strong></p>
+                <p>Sabies que cada any KriskaDecor acumula metres i metres de cadenes d’alumini que no poden
+                    reutilitzar? Llençar-les significa perdre material d’alta qualitat i generar residus.
+                    <strong>Nosaltres hi vam veure una oportunitat.</strong></p>
             </div>
         </section>
 
@@ -386,45 +524,55 @@
             <h2 class="section-title">El Nostre Repte: <span>Reaprofitar</span></h2>
             <div class="challenge-gallery">
                 <div class="challenge-image" style="background-image: url('assets/images/projecte krisca.jpg');"></div>
-                <div class="challenge-image" style="background-image: url('assets/images/projecte krisca 2.jpg');"></div>
-                <div class="challenge-image" style="background-image: url('assets/images/projecte krisca 3.jpg');"></div>
+                <div class="challenge-image" style="background-image: url('assets/images/projecte krisca 2.jpg');">
+                </div>
+                <div class="challenge-image" style="background-image: url('assets/images/projecte krisca 3.jpg');">
+                </div>
             </div>
         </section>
 
         <section class="section animated-section" id="projectes">
             <h2 class="section-title">Dues Vides, <span>Un Origen</span></h2>
             <div class="projects-grid">
-                <a href="kriska-green-rebirth.html" class="project-card" style="background-image: url('assets/images/imatge plantes kirska .png');">
+                <a href="kriska-green-rebirth.html" class="project-card"
+                    style="background-image: url('assets/images/imatge plantes kirska .png');">
                     <div class="project-content">
                         <h3>Kriska Green Rebirth</h3>
-                        <p>Transformem les cadenes en jardins interiors i exteriors, creant estructures úniques on el disseny industrial es fusiona amb la natura.</p>
+                        <p>Transformem les cadenes en jardins interiors i exteriors, creant estructures úniques on el
+                            disseny industrial es fusiona amb la natura.</p>
                     </div>
                 </a>
-                <a href="kriska-art-rebirth.html" class="project-card" style="background-image: url('assets/images/art kriska .png');">
+                <a href="kriska-art-rebirth.html" class="project-card"
+                    style="background-image: url('assets/images/art kriska .png');">
                     <div class="project-content">
                         <h3>Kriska Art Rebirth</h3>
-                        <p>Donem el material a escoles d'art i disseny, convertint l'excedent en un recurs perquè el talent emergent creï obres amb valor social i ambiental.</p>
+                        <p>Donem el material a escoles d'art i disseny, convertint l'excedent en un recurs perquè el
+                            talent emergent creï obres amb valor social i ambiental.</p>
                     </div>
                 </a>
             </div>
         </section>
 
         <section class="section animated-section" id="validacio">
-            <div class="section-bg parallax" style="background-image: url('assets/images/cadena-eslabones-intro.png');"></div>
+            <div class="section-bg parallax" style="background-image: url('assets/images/cadena-eslabones-intro.png');">
+            </div>
             <div class="section-overlay"></div>
             <h2 class="section-title">Una Idea <span>Validada</span></h2>
             <div class="validation-grid">
                 <div class="validation-card">
                     <img src="assets/images/citysens_logo.jfif" alt="CitySens Logo" class="citysens-logo">
-                    <p class="validation-quote">"Una proposta coherent, viable i alineada amb les noves tendències de sostenibilitat i disseny biòfil."</p>
+                    <p class="validation-quote">"Una proposta coherent, viable i alineada amb les noves tendències de
+                        sostenibilitat i disseny biòfil."</p>
                     <span class="validation-source">- CEO, CitySens</span>
                 </div>
                 <div class="validation-card">
                     <p class="validation-stat">+80%</p>
-                    <p class="validation-quote">D'estudiants d'art i disseny interessats a utilitzar les nostres cadenes en els seus projectes.</p>
+                    <p class="validation-quote">D'estudiants d'art i disseny interessats a utilitzar les nostres cadenes
+                        en els seus projectes.</p>
                 </div>
                 <div class="validation-card">
-                    <p class="validation-quote">"És possible crear dissenys únics combinant cadenes i plantes per a clients exclusius."</p>
+                    <p class="validation-quote">"És possible crear dissenys únics combinant cadenes i plantes per a
+                        clients exclusius."</p>
                     <span class="validation-source">- Garden Cort</span>
                 </div>
             </div>
@@ -462,14 +610,17 @@
             </video>
             <div class="video-overlay"></div>
             <div class="main-cta-content">
-                <h2>Transformem el que abans era un residu en una oportunitat per fer créixer vida, art i consciència.</h2>
+                <h2>Transformem el que abans era un residu en una oportunitat per fer créixer vida, art i consciència.
+                </h2>
                 <p>🌱 Disseny que inspira, natura que connecta, sostenibilitat que perdura.</p>
             </div>
         </section>
 
         <section class="section final-cta-section animated-section" id="contacto">
             <h2 class="section-title">Uneix-te al <span>Projecte</span></h2>
-            <p class="text-content">Aquesta és una proposta per redefinir el valor i la bellesa. Per crear un nou capítol en la història de Kriskadecor. Sigues el primer a conèixer els nostres llançaments i col·laboracions.</p>
+            <p class="text-content">Aquesta és una proposta per redefinir el valor i la bellesa. Per crear un nou
+                capítol en la història de Kriskadecor. Sigues el primer a conèixer els nostres llançaments i
+                col·laboracions.</p>
             <a href="projects.html" class="cta-button">Explora</a>
         </section>
     </div>
@@ -495,4 +646,5 @@
     </script>
 
 </body>
+
 </html>

@@ -170,15 +170,20 @@
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
-                padding: 15px;
+                padding: 15px 5%;
+                background-color: rgba(0, 0, 0, 0.95);
             }
 
             .nav {
                 margin-top: 15px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
             }
 
             .nav a {
-                margin: 0 10px;
+                margin: 0;
                 font-size: 0.9em;
             }
 
@@ -187,7 +192,8 @@
             }
 
             .canvas-grid {
-                padding: 20px 2%;
+                grid-template-columns: 1fr;
+                padding: 20px 5%;
             }
         }
     </style>

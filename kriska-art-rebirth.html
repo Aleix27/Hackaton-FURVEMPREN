@@ -182,6 +182,42 @@
             font-weight: bold;
             cursor: pointer;
         }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 5%;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.95);
+            }
+
+            .nav {
+                margin-top: 15px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .nav a {
+                margin: 0;
+                font-size: 0.9em;
+            }
+
+            .project-hero h1 {
+                font-size: 2.5em;
+            }
+
+            .intro-section {
+                padding: 60px 5%;
+            }
+
+            .feature-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 60px 5%;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 
