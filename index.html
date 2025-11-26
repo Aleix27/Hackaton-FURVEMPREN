@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriskadecor Rechained History</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --font-main: 'Montserrat', sans-serif;
+            --color-background: #000000;
+            --color-text: #f0f0f0;
+            --color-primary: #D4AF37;
+            --color-dark-card: #111111;
+            --color-border: rgba(212, 175, 55, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            margin: 0;
+            background-color: var(--color-background);
+            color: var(--color-text);
+            overflow-x: hidden;
+        }
+
+        /* --- Header --- */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 4%;
+            position: fixed;
+            width: 92%;
+            top: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 1000;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .header .logo {
+            height: 35px;
+            width: auto;
+        }
+        .nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            font-size: 1em;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+        .nav a:hover {
+            color: var(--color-primary);
+            text-shadow: 0 0 5px var(--color-primary);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0.4));
+            z-index: 1;
+        }
+        .hero-background-video {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        .hero-content {
+            z-index: 2;
+            position: relative;
+        }
+        .hero h1 {
+            font-size: 4.5em;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: #fff;
+        }
+        .hero .slogan {
+            font-size: 1.4em;
+            margin-top: 15px;
+            font-weight: 400;
+            letter-spacing: 10px;
+            text-transform: uppercase;
+            color: var(--color-primary);
+        }
+
+        /* --- General Section Styling & Animations --- */
+        .section {
+            padding: 200px 8%;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -2;
+        }
+        .section-bg.parallax {
+             background-attachment: fixed;
+        }
+        .section-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            z-index: -1;
+        }
+
+        .animated-section {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .animated-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-title {
+            font-size: 3em;
+            margin-bottom: 80px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            text-align: center;
+        }
+        .section-title span {
+            color: var(--color-primary);
+        }
+        .text-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.3em;
+            line-height: 1.9;
+            text-align: center;
+        }
+        .text-content strong {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        /* --- Specific Section Styles --- */
+        #repte .challenge-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 80px;
+        }
+        #repte .challenge-image {
+            height: 450px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        #repte .challenge-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        #projectes .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        #projectes .project-card {
+            height: 70vh;
+            background-size: cover;
+            background-position: center;
+            border-radius: 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        #projectes .project-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+        }
+        #projectes .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            transition: background 0.4s ease;
+        }
+        #projectes .project-card:hover::before {
+            background: rgba(0,0,0,0.2);
+        }
+        #projectes .project-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+        }
+        #projectes .project-content h3 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        #projectes .project-content p {
+            font-size: 1.1em;
+            max-width: 400px;
+        }
+
+        #validacio .validation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            align-items: stretch;
+            position: relative;
+            z-index: 2;
+        }
+        #validacio .validation-card {
+            background-color: rgba(17, 17, 17, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 15px;
+            border: 1px solid var(--color-border);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #validacio .citysens-logo {
+            width: 150px;
+            margin-bottom: 30px;
+        }
+        #validacio .validation-quote {
+            font-size: 1.3em;
+            font-style: italic;
+            line-height: 1.7;
+            color: #ccc;
+            margin: 0 0 20px 0;
+        }
+        #validacio .validation-source {
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        #validacio .validation-stat {
+            font-size: 8em;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        #equip .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        #equip .strategy-card {
+            background-color: var(--color-dark-card);
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid var(--color-border);
+        }
+        #equip .icon {
+            font-size: 3.5em;
+            color: var(--color-primary);
+            margin-bottom: 25px;
+        }
+        #equip h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        #transformem {
+            height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 5%;
+        }
+        #transformem .video-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); z-index: 2;
+        }
+        #transformem .main-cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            text-align: center;
+        }
+        #transformem h2 {
+            font-size: 3.5em;
+            color: #fff;
+            font-weight: 700;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.8);
+            margin: 0 0 20px 0;
+        }
+        #transformem p {
+            font-size: 1.8em;
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+
+        #contacto {
+            background-color: var(--color-dark-card);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            text-align: center;
+        }
+        #contacto .cta-button {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 20px 45px;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2em;
+            transition: background-color 0.3s, color 0.3s, transform 0.3s;
+        }
+        #contacto .cta-button:hover {
+            background-color: var(--color-primary);
+            color: #000;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 60px 10%;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <img src="assets/images/LOGO.png" alt="Kriskadecor Atelier Logo" class="logo">
+        <nav class="nav">
+            <a href="#problema">El Repte</a>
+            <a href="#projectes">Projectes</a>
+            <a href="#validacio">Validació</a>
+            <a href="#equip">Equip</a>
+            <a href="#contacto">Contacte</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Kriskadecor Rechained History</h1>
+            <p class="slogan">Disseny que inspira, Sostenibilitat que perdura</p>
+        </div>
+        <video autoplay muted loop playsinline class="hero-background-video">
+            <source src="assets/videos/video plantes hotel decoracio.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <div id="content-wrap">
+
+        <section class="section animated-section" id="problema">
+            <h2 class="section-title">De Residu a <span>Recurs</span></h2>
+            <div class="text-content">
+                <p>Sabies que cada any KriskaDecor acumula metres i metres de cadenes d’alumini que no poden reutilitzar? Llençar-les significa perdre material d’alta qualitat i generar residus. <strong>Nosaltres hi vam veure una oportunitat.</strong></p>
+            </div>
+        </section>
+
+        <section class="section animated-section" id="repte">
+            <div class="section-bg" style="background-image: url('assets/images/artesania-industrial-1.png');"></div>
+            <div class="section-overlay"></div>
+            <h2 class="section-title">El Nostre Repte: <span>Reaprofitar</span></h2>
+            <div class="challenge-gallery">
+                <div class="challenge-image" style="background-image: url('assets/images/projecte krisca.jpg');"></div>
+                <div class="challenge-image" style="background-image: url('assets/images/projecte krisca 2.jpg');"></div>
+                <div class="challenge-image" style="background-image: url('assets/images/projecte krisca 3.jpg');"></div>
+            </div>
+        </section>
+
+        <section class="section animated-section" id="projectes">
+            <h2 class="section-title">Dues Vides, <span>Un Origen</span></h2>
+            <div class="projects-grid">
+                <a href="kriska-green-rebirth.html" class="project-card" style="background-image: url('assets/images/imatge plantes kirska .png');">
+                    <div class="project-content">
+                        <h3>Kriska Green Rebirth</h3>
+                        <p>Transformem les cadenes en jardins interiors i exteriors, creant estructures úniques on el disseny industrial es fusiona amb la natura.</p>
+                    </div>
+                </a>
+                <a href="kriska-art-rebirth.html" class="project-card" style="background-image: url('assets/images/art kriska .png');">
+                    <div class="project-content">
+                        <h3>Kriska Art Rebirth</h3>
+                        <p>Donem el material a escoles d'art i disseny, convertint l'excedent en un recurs perquè el talent emergent creï obres amb valor social i ambiental.</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section class="section animated-section" id="validacio">
+            <div class="section-bg parallax" style="background-image: url('assets/images/cadena-eslabones-intro.png');"></div>
+            <div class="section-overlay"></div>
+            <h2 class="section-title">Una Idea <span>Validada</span></h2>
+            <div class="validation-grid">
+                <div class="validation-card">
+                    <img src="assets/images/citysens_logo.jfif" alt="CitySens Logo" class="citysens-logo">
+                    <p class="validation-quote">"Una proposta coherent, viable i alineada amb les noves tendències de sostenibilitat i disseny biòfil."</p>
+                    <span class="validation-source">- CEO, CitySens</span>
+                </div>
+                <div class="validation-card">
+                    <p class="validation-stat">+80%</p>
+                    <p class="validation-quote">D'estudiants d'art i disseny interessats a utilitzar les nostres cadenes en els seus projectes.</p>
+                </div>
+                <div class="validation-card">
+                    <p class="validation-quote">"És possible crear dissenys únics combinant cadenes i plantes per a clients exclusius."</p>
+                    <span class="validation-source">- Garden Cort</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section animated-section" id="equip">
+            <h2 class="section-title">L'Equip <span>darrere la Idea</span></h2>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <div class="icon">🎓</div>
+                    <h3>Visió de Negoci</h3>
+                    <p>Responsable de l'anàlisi de mercat i de la viabilitat del model de negoci circular.</p>
+                </div>
+                <div class="strategy-card">
+                    <div class="icon">💻</div>
+                    <h3>Solucions Tecnològiques</h3>
+                    <p>Encarregat de la plataforma digital i la possible automatització de processos.</p>
+                </div>
+                <div class="strategy-card">
+                    <div class="icon">⚗️</div>
+                    <h3>Anàlisi de Materials</h3>
+                    <p>Avalua la viabilitat del tractament i la reutilització dels materials.</p>
+                </div>
+                <div class="strategy-card">
+                    <div class="icon">⚖️</div>
+                    <h3>Estratègia i Legalitat</h3>
+                    <p>Assegura el compliment normatiu i les estratègies de Responsabilitat Social Corporativa.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-cta-section animated-section" id="transformem">
+            <video autoplay muted loop playsinline class="hero-background-video">
+                <source src="assets/videos/peces de cadena .mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay"></div>
+            <div class="main-cta-content">
+                <h2>Transformem el que abans era un residu en una oportunitat per fer créixer vida, art i consciència.</h2>
+                <p>🌱 Disseny que inspira, natura que connecta, sostenibilitat que perdura.</p>
+            </div>
+        </section>
+
+        <section class="section final-cta-section animated-section" id="contacto">
+            <h2 class="section-title">Uneix-te al <span>Projecte</span></h2>
+            <p class="text-content">Aquesta és una proposta per redefinir el valor i la bellesa. Per crear un nou capítol en la història de Kriskadecor. Sigues el primer a conèixer els nostres llançaments i col·laboracions.</p>
+            <a href="projects.html" class="cta-button">Explora</a>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 Kriskadecor Atelier. Una proposta de valor.</p>
+    </footer>
+
+    <script>
+        const animatedSections = document.querySelectorAll('.animated-section');
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        animatedSections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+    </script>
+
+</body>
+</html>
