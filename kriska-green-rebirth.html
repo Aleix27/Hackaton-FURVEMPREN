@@ -216,22 +216,38 @@
 
             .nav a {
                 margin: 0;
-                font-size: 0.9em;
+                font-size: 0.85em;
             }
 
             .project-hero h1 {
-                font-size: 2.5em;
+                font-size: 2em;
             }
 
             .intro-section {
-                padding: 60px 5%;
+                padding: 40px 5%;
+            }
+
+            .intro-section h2 {
+                font-size: 1.8em;
+            }
+
+            .intro-section p {
+                font-size: 1em;
             }
 
             .feature-section {
                 grid-template-columns: 1fr;
-                gap: 40px;
-                padding: 60px 5%;
+                gap: 30px;
+                padding: 40px 5%;
                 text-align: center;
+            }
+
+            .feature-text h3 {
+                font-size: 1.5em;
+            }
+
+            .feature-text p {
+                font-size: 1em;
             }
         }
     </style>
@@ -280,7 +296,8 @@
         </section>
 
         <section class="full-screen-video-container">
-            <video src="assets/videos/video prototip plantes.mp4" autoplay loop muted></video>
+            <video src="assets/videos/video prototip plantes.mp4" autoplay loop muted playsinline
+                style="pointer-events: none;"></video>
         </section>
 
         <section class="feature-section reverse">
